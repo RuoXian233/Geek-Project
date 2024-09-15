@@ -1,0 +1,18 @@
+{
+  "title": "编译与解释 - 词法分析",
+  "subtitle": "Geek Project 01",
+  "1.broken": "<print:标识符>",
+  "2.broken": "<(:左括号>",
+  "3.broken": "<\":双引号>",
+  "4.broken": "<Hello, world:字面量>",
+  "5.broken": "<\":双引号>",
+  "6.broken": "<):右括号>",
+  "1.lexing-note": "`print` 是什么？ 是一个对象的名字(标识符)",
+  "2.lexing-note": "`(` 是什么? 是一个特殊符号(左括号)",
+  "3.lexing-note": "`\"` 是什么? 是字符串的标识(引号)",
+  "4.lexing-note": "`Hello, world` 是什么? 是字符串对应的内容(字面量)",
+  "5.lexing-note": "`\"` 是什么? 是字符串的标识(引号)",
+  "6.lexing-note": "`)` 是什么? 是另一个特殊符号(右括号)",
+  "7.lexing-note": "绝大多数语言都会在最后加上一个终止符号(EOL/EOF)",
+  "lexing-list-caption": "词法分析结果:"
+}

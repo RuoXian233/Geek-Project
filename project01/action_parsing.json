@@ -1,0 +1,45 @@
+{
+    "title_scene": [
+        {
+            "action": "write",
+            "target": "title"
+        },
+        {
+            "action": "wait",
+            "params": [0.32]
+        },
+        {
+            "action": "write",
+            "target": "subtitle"
+        },
+        {
+            "action": "wait",
+            "params": [1]
+        },
+        {
+            "action": "translate",
+            "target": "title",
+            "params": ["LEFT * 3"]
+        },
+        {
+            "action": "lagged",
+            "params": [
+                {
+                    "action": "unwrite",
+                    "target": "subtitle"
+                },
+                {
+                    "action": "unwrite",
+                    "target": "title"
+                }
+            ],
+            "properties": {
+                "ratio": 0.32                
+            }
+        },
+        {
+            "action": "wait",
+            "params": [3]
+        }
+    ]
+}
