@@ -8,5 +8,210 @@
         "color": "pink",
         "scale": 0.8,
         "shift": "DOWN * 1.5"
+    },
+    "lexing-list": {
+        "value": "词法分析结果:",
+        "color": "#FFEE11",
+        "shift": "UP * 2.5",
+        "scale": 0.5 
+    },
+    "1.broken": {
+        "value": "<print:标识符>",
+        "shift": "UP * 2",
+        "scale": 0.4
+    },
+    "2.broken": {
+        "value": "<(:左括号>",
+        "shift": "UP * 1.5",
+        "scale": 0.4
+    },
+    "3.broken": {
+        "value": "<\":双引号>",
+        "shift": "UP",
+        "scale": 0.4
+    },
+    "4.broken": { 
+        "value": "<Hello, world:字面量>",
+        "shift": "UP * 0.5",
+        "scale": 0.4
+    },
+
+    "5.broken": {
+        "value": "<\":双引号>",
+        "scale": 0.4
+    },
+    "6.broken": {
+        "value": "<):右括号>",
+        "shift": "DOWN * 0.5",
+        "scale": 0.4
+    },
+    "brokens": [
+        "lexing_list",
+        "broken_1",
+        "broken_2",
+        "broken_3",
+        "broken_4",
+        "broken_5",
+        "broken_6"
+    ],
+    "brokens-without-list": [
+        "broken_1",
+        "broken_2",
+        "broken_3",
+        "broken_4",
+        "broken_5",
+        "broken_6"
+    ],
+    "note": {
+        "value": "这是我们刚刚词法分析之后产生的结果",
+        "shift": "DOWN * 2",
+        "color": "#66FFFF",
+        "scale": 0.6
+    },
+    "surrounding-lexing-list": {
+        "type": "surroundingRectangle",
+        "value": "$brokens",
+        "color": "yellow"
+    },
+    "2.note": {
+        "value": "语法分析器会遍历 Token 列表，并尝试匹配出对应的语法结构",
+        "scale": 0.4,
+        "color": "#33FFFF",
+        "shift": "UP * 2.5"
+    },
+    "pointer": {
+        "type": "arrow",
+        "properties": {
+            "start": "%LEFT",
+            "end": "%LEFT * 2.5"
+        },
+        "shift": "UP * 0.9"
+    },
+    "analyzing-text": {
+        "type": "markupText",
+        "value": "<span>我们遇到了 `</span><span color=\"yellow\">print</span><span>` 这个 Token</span>",
+        "shift": "UP * 2.5",
+        "scale": 0.4
+    },
+    "1.analyzing-note": {
+        "value": "还不能确定这行语句干了什么",
+        "color": "#FCF8A1",
+        "shift":"UP * 2.5",
+        "scale": 0.4
+    },
+    "2.analyzing-note": {
+        "type": "markupText",
+        "value": "<span>我们遇到了 `</span><span color=\"green\">(</span><span>` 这个 Token</span>",
+        "shift": "UP * 2.5",
+        "scale": 0.4
+    },
+    "3.analyzing-note": {
+        "color": "#FCF8A1",
+        "value": "一个 \"变量名\"加上一个\"左括号\"，你想到了什么 ?",
+        "shift": "UP * 2.5",
+        "scale": 0.4
+    },
+    "4.analyzing-note": {
+        "type": "markupText",
+        "value": "没错！正是 <span color=\"cyan\">\"函数调用\"</span>",
+        "shift": "UP * 2.5",
+        "scale": 0.4
+    },
+    "base-node": {
+        "value": "函数调用",
+        "color": "#F15A3B",
+        "shift": "RIGHT * 3 + UP * 1.5",
+        "scale": 0.5
+    },
+    "node-l1": {
+        "value": "函数名: print",
+        "color": "#EEEE11",
+        "shift": "RIGHT * 1.5",
+        "scale": 0.5
+    },
+    "node-l1-rect": {
+        "type": "surroundingRectangle",
+        "value": "$node_l1",
+        "color": "#EEEE11"
+    },
+    "base-l1": {
+        "type": "line",
+        "properties": {
+            "start": "%base_node.get_center()",
+            "end": "%node_l1_rect.get_center()"
+        },
+        "scale": 0.8
+    },
+    "base-node-rect": {
+        "type": "surroundingRectangle",
+        "value": "$base_node",
+        "color": "#F15A3B"
+    },
+    "5.analyzing-note": {
+        "type": "markupText",
+        "value":"<span>我们遇到了 `</span><span color=\"pink\">\"</span><span>` 这个 Token</span>",
+        "shift": "UP * 2.5",
+        "scale": 0.4
+    },
+    "6.analyzing-note": {
+        "value":"接下来应该是字符串内容",
+        "color": "#F15A3B",
+        "shift": "UP * 2.5",
+        "scale": 0.4
+    },
+    "7.analyzing-note": {
+        "value":"好极了，正是 `hello, world`",
+        "color": "yellow",
+        "shift": "UP * 2.5",
+        "scale": 0.4
+    },
+    "8.analyzing-note": {
+        "type": "markupText",
+        "value": "<span>我们遇到了 `</span><span color=\"pink\">\"</span><span>` 这个 Token</span>",
+        "shift": "UP * 2.5",
+        "scale": 0.4
+    },
+    "9.analyzing-note": {
+        "value":"这说明什么? 字符串结束了",
+        "color": "pink",
+        "shift": "UP * 2.5",
+        "scale": 0.4
+    },
+    "10.analyzing-note": {
+        "type": "markupText",
+        "shift":"UP * 2.5",
+        "value": "<span>我们遇到了 `</span><span color=\"green\">)</span><span>` 这个 Token</span>",
+        "scale": 0.4
+    },
+    "11.analyzing-note": {
+        "value":"函数调用似乎结束了，刚才的字符串想必就是函数参数了吧",
+        "color": "yellow",
+        "shift": "UP * 2.5",
+        "scale": 0.4
+    },
+    "node-r1": {
+        "value": "参数: 'Hello, world'",
+        "color": "#EEEE11",
+        "shift": "RIGHT * 5",
+        "scale": 0.4
+    },
+    "node-r1-rect": {
+        "type": "surroundingRectangle",
+        "value": "$node_r1",
+        "color": "#EEEE11"
+    },
+    "base-r1": {
+        "type": "line",
+        "properties": {
+            "start": "%base_node.get_center()",
+            "end": "%node_r1_rect.get_center()"
+        },
+        "scale": 0.8
+    },
+    "12.analyzing-note": {
+        "type": "markupText",
+        "scale": 0.4,
+        "shift": "LEFT * 1.5 + DOWN * 2",
+        "value": "<span color=\"yellow\">语法分析：</span><span color=\"green\">将词法分析产生的序列按照</span><span color=\"red\">指定语法规则</span><span color=\"cyan\">转化成树状结构, 即 AST (抽象语法树)</span>"
     }
 }

@@ -1,25 +1,24 @@
 {
     "title_scene": [
         {
-            "action": "write",
-            "target": "title"
-        },
-        {
-            "action": "wait",
-            "params": [0.32]
-        },
-        {
-            "action": "write",
-            "target": "subtitle"
+            "action": "lagged",
+            "params": [
+                {
+                    "action": "write",
+                    "target": "title"
+                },
+                {
+                    "action": "write",
+                    "target": "subtitle"
+                }
+            ],
+            "properties": {
+                "ratio": 0.64               
+            }
         },
         {
             "action": "wait",
             "params": [1]
-        },
-        {
-            "action": "translate",
-            "target": "title",
-            "params": ["LEFT * 3"]
         },
         {
             "action": "lagged",
@@ -34,12 +33,332 @@
                 }
             ],
             "properties": {
-                "ratio": 0.32                
+                "ratio": 0.32           
             }
         },
         {
             "action": "wait",
-            "params": [3]
+            "params": [0.64]
+        },
+        {
+            "action": "write",
+            "target": "lexing_list"
+        },
+        {
+            "action": "wait",
+            "params": [1]
+        },
+        {
+            "action": "lagged", 
+            "params": [{ 
+                "action": "parallel",
+                "params": [{
+                    "action": "select",
+                    "target": "broken_{}",
+                    "params": [1, 2, 3, 4, 5, 6],
+                    "properties": {
+                            "action": "write"
+                        }
+                    }]
+                },
+                {
+                    "action": "write",
+                    "target": "note"
+                },
+                {
+                    "action": "create",
+                    "target": "surrounding_lexing_list"
+                }
+            ],
+            "properties": {
+                "ratio": 0.64
+            }
+        },
+        {
+            "action": "wait",
+            "params": [1]
+        },
+        {
+            "action": "parallel",
+            "params": [
+                {
+                    "action": "unwrite",
+                    "target": "lexing_list"
+                },
+                {
+                    "action": "unwrite",
+                    "target": "note"
+                },
+                {
+                    "action": "uncreate",
+                    "target": "surrounding_lexing_list"
+                }
+            ]
+        },
+        {
+            "action": "parallel",
+            "params": [
+                {
+                    "action": "shift",
+                    "target": "brokens_without_list",
+                    "params": ["DOWN * 1.5"]
+                },
+                {
+                    "action": "scale",
+                    "target": "brokens_without_list",
+                    "params": [1.32]
+                }
+            ], 
+            "async": true
+        },
+        {
+            "action":"shift",
+            "target": "brokens_without_list",
+            "params": ["LEFT * 4"]
+        },
+        {
+            "action": "wait",
+            "params": [0.8]
+        },
+        {
+            "action": "write",
+            "target": "note_2"
+        },
+        {
+            "action": "create",
+            "target": "pointer"
+        },
+        {
+            "action": "transform",
+            "target": "note_2",
+            "params": ["$analyzing_text"]
+        },
+        {
+            "action": "wait",
+            "params": [0.8]
+        },
+        {
+            "action": "transform",
+            "target": "analyzing_text",
+            "params": ["$analyzing_note_1"]
+        },
+        {
+            "action": "wait",
+            "params": [0.8]
+        },
+        {
+            "action": "shift",
+            "target": "pointer",
+            "params": ["DOWN * 0.7"]
+        },
+        {
+            "action": "transform",
+            "target": "analyzing_note_1",
+            "params": ["$analyzing_note_2"]
+        },
+        {
+            "action": "wait",
+            "params": [0.8]
+        },
+        {
+            "action": "transform",
+            "target": "analyzing_note_2",
+            "params": ["$analyzing_note_3"]
+        },
+        {
+            "action": "wait",
+            "params": [0.8]
+        },
+        {
+            "action": "transform",
+            "target": "analyzing_note_3",
+            "params": ["$analyzing_note_4"]
+        },
+        {
+            "action": "lagged",
+            "params": [
+                {
+                    "action": "write",
+                    "target": "base_node"
+                },
+                {
+                    "action": "create",
+                    "target": "base_node_rect"
+                },
+                {
+                    "action": "create",
+                    "target": "base_l1"
+                },
+                {
+                    "action": "parallel",
+                    "params": [
+                        {
+                            "action": "write",
+                            "target": "node_l1"
+                        },
+                        {
+                            "action": "create",
+                            "target": "node_l1_rect"
+                        }
+                    ]
+                }
+            ],
+            "properties": {
+                "ratio": 0.32
+            }
+        },
+        {
+            "action": "wait",
+            "params": [0.8]
+        },
+        {
+            "action": "shift",
+            "target": "pointer",
+            "params": ["DOWN * 0.7"]
+        },
+        {
+            "action": "transform",
+            "target": "analyzing_note_4",
+            "params": ["$analyzing_note_5"]
+        },
+        {
+            "action": "wait",
+            "params": [0.8]
+        },
+        {
+            "action": "transform",
+            "target": "analyzing_note_5",
+            "params": ["$analyzing_note_6"]
+        },
+        {
+            "action": "wait",
+            "params": [0.8]
+        },
+        {
+            "action": "shift",
+            "target": "pointer",
+            "params": ["DOWN * 0.6"]
+        },
+        {
+            "action": "wait",
+            "params": [0.8]
+        },
+        {
+            "action": "transform",
+            "target": "analyzing_note_6",
+            "params": ["$analyzing_note_7"]
+        },
+        {
+            "action": "wait",
+            "params": [0.8]
+        },
+        {
+            "action": "shift",
+            "target": "pointer",
+            "params": ["DOWN * 0.65"]
+        },
+        {
+            "action": "wait",
+            "params": [0.8]
+        },
+        {
+            "action": "transform",
+            "target": "analyzing_note_7",
+            "params": ["$analyzing_note_8"]
+        },
+        {
+            "action": "wait",
+            "params": [0.8]
+        },
+        {
+            "action": "transform",
+            "target": "analyzing_note_8",
+            "params": ["$analyzing_note_9"]
+        },
+        {
+            "action": "wait",
+            "params": [0.8]
+        },
+        {
+            "action": "shift",
+            "target": "pointer",
+            "params": ["DOWN * 0.75"]
+        },
+        {
+            "action": "wait",
+            "params": [0.8]
+        },
+        {
+            "action": "transform",
+            "target": "analyzing_note_9",
+            "params": ["$analyzing_note_10"]
+        },
+        {
+            "action": "wait",
+            "params": [0.8]
+        },
+        {
+            "action": "transform",
+            "target": "analyzing_note_10",
+            "params": ["$analyzing_note_11"]
+        },
+        {
+            "action": "lagged",
+            "params": [
+                {
+                    "action": "create",
+                    "target": "base_r1"
+                },
+                {
+                    "action": "parallel",
+                    "params": [
+                        {
+                            "action": "write",
+                            "target": "node_r1"
+                        },
+                        {
+                            "action": "create",
+                            "target": "node_r1_rect"
+                        }
+                    ]
+                }
+            ],
+            "properties": {
+                "ratio": 0.32
+            }
+        },
+        {
+            "action": "parallel",
+            "params": [
+                {
+                    "action": "unwrite",
+                    "target": "analyzing_note_11"
+                },
+                {
+                    "action": "uncreate",
+                    "target": "pointer"
+                },
+                {
+                    "action": "select",
+                    "target": "broken_{}",
+                    "params": [1, 2, 3, 4, 5, 6],
+                    "properties": {
+                        "action": "unwrite"
+                    }
+                }
+            ]
+        },
+        {
+            "action": "wait",
+            "params": [0.8]
+        },
+        {
+            "action": "write",
+            "target": "analyzing_note_12"
+        },
+        {
+            "action": "wait",
+            "params": [3.2]
         }
     ]
 }
