@@ -1,0 +1,32 @@
+{
+    "axes": {
+        "type": "axes"
+    },
+    "cosine-graph": {
+        "type": "axes.plot",
+        "value": "%cos",
+        "properties": {
+            "x_range": "%[-5, 5]"
+        },
+        "color": "yellow"
+    },
+    "dot": {
+        "type": "dot",
+        "value": "%cosine_graph.get_start()"
+    },
+    "dot-pref": {
+        "type": "mathTex",
+        "value": "cos(x) = ",
+        "shift": "DOWN * 2 + LEFT * 4"
+    },
+    "dot-label": {
+        "type": "decimalNumber",
+        "value": "%cos(-5)",
+        "shift": "DOWN * 2 + LEFT * 2.2",
+        "color": "pink",
+        "associate_value": "dot.get_center()[1]",
+        "properties": {
+            "include_sign": true
+        }
+    }
+}

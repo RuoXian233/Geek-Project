@@ -1,0 +1,38 @@
+{
+    "test_scene": [
+        {
+            "action": "create",
+            "target": "axes"
+        },
+        {
+            "action": "create",
+            "target": "dot"
+        },
+        {
+            "action": "create",
+            "target": "cosine_graph"
+        },
+        {
+            "action": "write",
+             "target": "dot_pref" 
+        },
+        {
+            "action": "create",
+            "target": "dot_label"
+        },
+        {
+            "action": "wait",
+            "params": [1]
+        },
+        {
+            "action": "trace",
+            "target": "dot",
+            "params": ["$cosine_graph"],
+            "duration": 3.2
+        },
+        {
+            "action": "wait",
+            "params": [1]
+        }
+    ]
+}
