@@ -1,0 +1,211 @@
+{
+    "title": {
+        "value": "蒙特卡洛算法 - 动画演示"
+    },
+    "subtitle": {
+        "value": "Geek Project 03",
+        "color": "pink",
+        "shift": "DOWN * 1.2",
+        "scale": "0.75"
+    },
+    "axes": {
+        "type": "axes",
+        "add_coord": true,
+        "properties": {
+            "x_range": "%[-5, 5]",
+            "y_range": "%[-1.5, 1.5]",
+            "x_length": 10,
+            "y_length": 7.5
+        }
+    },
+    "plane": {
+        "type": "numberPlane"
+    },
+    "sine-graph": {
+        "type": "axes.plot",
+        "value": "%sin",
+        "properties": {
+            "x_range": "%[-1, 5]"
+        },
+        "color": "yellow"
+    },
+    "area": {
+        "type": "axes.get_area",
+        "value": "$sine_graph",
+        "properties": {
+            "color": "#DDEEDD",
+            "opacity": 0.6,
+            "x_range": "%[0, PI]"
+        }
+    },
+    "func-tip": {
+        "type": "mathTex",
+        "value": "f(x) = \\sin x \\ (-1 \\le x \\le 5)",
+        "color": "yellow",
+        "scale": "0.9",
+        "shift": "UP * 2 + LEFT * 4"
+    },
+    "1.tip": {
+        "value": "正常我们想要求此函数与 x 轴围成的图形的面积，方法如上",
+        "scale": 0.5,
+        "shift": "DOWN * 3",
+        "color": "#00FFFF"
+    },
+    "1.form": {
+        "type": "mathTex",
+        "value": "\\int_{0}^{\\pi} \\sin x \\; \\mathrm{d}x",
+        "scale": 0.75,
+        "shift": "UP * 3 + LEFT * 5",
+        "color": "#CAFF70"
+    },
+    "2.form": {
+        "type": "mathTex",
+        "value": "=- \\cos x\\mid  _{0}^{\\pi}",
+        "scale": 0.7,
+        "shift": "UP * 2 + LEFT * 5.5",
+        "color": "#FFC1C1"
+    },
+    "3.form": {
+        "type": "mathTex",
+        "value": "=- \\cos \\pi\\ + \\cos0",
+        "scale": 0.7,
+        "shift": "UP * 1.32 + LEFT * 5.05",
+        "color": "#FFC1C1"
+    },
+    "4.form": {
+        "type": "mathTex",
+        "value": "= 2",
+        "scale": 0.7,
+        "shift": "UP * 0.7 + LEFT * 6.1",
+        "color": "#EEEE00"
+    },
+    "2.tip": {
+        "value": "定积分是高等数学里面的常规操作，容易求得这块面积为 2",
+        "scale": 0.5,
+        "shift": "DOWN * 3",
+        "color": "#00FFFF"
+    },
+    "3.tip": {  
+        "value": "如果将这个问题给计算机，它会用什么方法呢 ?",
+        "scale": 0.5,
+        "shift": "DOWN * 3",
+        "color": "#00FFFF"
+    },
+    "4.tip": {
+        "value": "我们先将这个区域截出来，用一个矩形框住",
+        "scale": 0.5,
+        "shift": "DOWN * 3",
+        "color": "#00FFFF"
+    },
+    "selected-graph": {
+        "type": "functionGraph",
+        "value": "%lambda x: sin(x) * 2",
+        "properties": {
+            "x_range": "%[0, PI]",
+            "color": "yellow",
+            "stroke_width": 1
+        },
+        "shift": "LEFT * 1.6 + DOWN"
+    },
+    "surrounding-rect": {
+        "type": "surroundingRectangle",
+        "value": "$selected_graph",
+        "color": "pink",
+        "properties": {
+            "stroke_width": 1.2,
+            "buff": 0
+        }
+    },
+    "5.tip": {
+        "value": "这是一个长为 pi, 宽为 1 的矩形",
+        "color": "GOLD",
+        "shift": "DOWN * 2",
+        "scale": "0.66"
+    },
+    "6.tip": {
+        "value": "现在我们往其中随机丢入小球，在曲线下方的记成红色，在曲线上方的记成蓝色",
+        "color": "GOLD",
+        "shift": "DOWN * 2 + LEFT * 0.75",
+        "scale": "0.5"
+    },
+    "7.tip": {
+        "value": "在投掷次数足够多的情况下，我们理应可以通过占比来求得面积",
+        "color": "GOLD",
+        "shift": "DOWN * 2 + LEFT * 0.4",
+        "scale": "0.66"
+    },
+    "5.form": {
+        "type": "mathTex",
+        "value": "S = 1 \\times \\pi = \\pi",
+        "color": "pink",
+        "shift": "RIGHT * 4.5 + UP",
+        "scale": 0.9
+    },
+    "8.tip": {
+        "value": "现在，10000 次模拟，我们开始",
+        "color": "yellow",
+        "shift": "DOWN * 2",
+        "scale": 0.8
+    },
+    "shape": [
+        "selected_graph",
+        "surrounding_rect"
+    ],
+    "6.form": {
+        "type": "mathTex",
+        "value": "S^{\\prime}   = S \\times",
+        "color": "yellow",
+        "shift": "RIGHT * 1.8",
+        "scale": 0.8
+    },
+    "fraction-line": {
+        "type": "line",
+        "move_to": "form_6",
+        "shift": "RIGHT * 1.6 + DOWN * 0.075",
+        "scale": 0.75,
+        "color": "WHITE",
+        "properties": {
+            "stroke_width": 0.8
+        }
+    },
+    "eqa": {
+        "type": "mathTex",
+        "value": "=",
+        "color": "yellow",
+        "scale": 0.8,
+        "move_to": "form_6",
+        "shift": "RIGHT * 2.8"
+    },
+    "6.form_comb": [
+        "form_6",
+        "eqa"
+    ],
+    "denominator": {
+        "type": "decimalNumber",
+        "value": 0,
+        "color": "BLUE",
+        "properties": {
+            "num_decimal_places": 0
+        },
+        "shift": "DOWN * 0.38 + RIGHT * 3.225"
+    },
+    "numerator": {
+        "type": "decimalNumber",
+        "value": 0,
+        "color": "RED",
+        "properties": {
+            "num_decimal_places": 0
+        },
+        "shift": "UP * 0.25 + RIGHT * 3.225"
+    },
+    "result": {
+        "type": "decimalNumber",
+        "value": 0,
+        "color": "yellow",
+        "scale": 0.9,
+        "shift": "RIGHT * 5.85",
+        "properties": {
+            "num_decimal_places": 6
+        }
+    }
+}

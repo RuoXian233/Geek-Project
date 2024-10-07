@@ -1,0 +1,314 @@
+{
+    "scene": [
+        {
+            "action": "lagged",
+            "params": [
+                {
+                    "action": "write",
+                    "target": "title"
+                },
+                {
+                    "action": "write",
+                    "target": "subtitle"
+                }
+            ],
+            "properties": {
+                "ratio": 0.5
+            }
+        },
+        {
+            "action": "wait",
+            "params": [0.5]
+        },
+        {
+            "action": "parallel",
+            "params": [
+                {
+                    "action": "unwrite",
+                    "target": "title"
+                },
+                {
+                    "action": "unwrite",
+                    "target": "subtitle"
+                }
+            ]
+        },
+        {
+            "action": "wait",
+            "params": [1]
+        },
+        {
+            "action": "wait",
+            "params": [0.5]
+        },
+        {
+            "action": "create",
+            "target": "axes"
+        },
+        {
+            "action": "wait",
+            "params": [0.3]
+        },
+        {
+            "action": "create",
+            "target": "sine_graph"
+        },
+        {
+            "action": "write",
+            "target": "func_tip"
+        },
+        {
+            "action": "wait",
+            "params": [1]
+        },
+        {
+            "action": "write",
+            "target": "tip_1"
+        },
+        {
+            "action": "wait",
+            "params": [0.5]
+        },
+        {
+            "action": "unwrite",
+            "target": "func_tip"
+        },
+        {
+            "action": "wait",
+            "params": [0.4]
+        },
+        {
+            "action": "create",
+            "target": "area"
+        },
+        {
+            "action": "write",
+            "target": "form_1"
+        },
+        {
+            "action": "wait",
+            "params": [3]
+        },
+        {
+            "action": "write",
+            "target": "form_2"
+        },
+        {
+            "action": "wait",
+            "params": [3]
+        },
+        {
+            "action": "write",
+            "target": "form_3"
+        },
+        {
+            "action": "wait",
+            "params": [3]
+        },
+        {
+            "action": "write",
+            "target": "form_4"
+        },
+        {
+            "action": "unwrite",
+            "target": "tip_1"
+        },
+        {
+            "action": "write",
+            "target": "tip_2"
+        },
+        {
+            "action": "parallel",
+            "params": [{
+                "action": "select",
+                "target": "form_{}",
+                "params": [1, 2, 3, 4],
+                "properties": {
+                    "action": "unwrite"
+                }
+            }]
+        },
+        {
+            "action": "wait",
+            "params": [0.5]
+        },
+        {
+            "action": "unwrite",
+            "target": "tip_2"
+        },
+        {
+            "action": "wait",
+            "params": [0.32]
+        },
+        {
+            "action": "write",
+            "target": "tip_3"
+        },
+        {
+            "action": "wait",
+            "params": [0.32]
+        },
+        {
+            "action": "unwrite",
+            "target": "tip_3"
+        },
+        {
+            "action": "wait",
+            "params": [0.32]
+        },
+        {
+            "action": "write",
+            "target": "tip_4"
+        },
+        {
+            "action": "wait",
+            "params": [1]
+        },
+        {
+            "action": "parallel",
+            "params": [
+                {
+                    "action": "fadeout",
+                    "target": "axes"
+                },
+                {
+                    "action": "fadeout",
+                    "target": "area"
+                },
+                {
+                    "action": "fadeout",
+                    "target": "sine_graph"
+                },
+                {
+                    "action": "unwrite",
+                    "target": "tip_4"
+                }
+            ]
+        },
+        {
+            "action": "create",
+            "target": "selected_graph"
+        },
+        {
+            "action": "create",
+            "target": "surrounding_rect"
+        },
+        {
+            "action": "wait",
+            "params": [0.25]
+        },
+        {
+            "action": "write",
+            "target": "tip_5"
+        },
+        {
+            "action": "wait",
+            "params": [1]
+        },
+        {
+            "action": "unwrite",
+            "target": "tip_5"
+        },
+        {
+            "action": "wait",
+            "params": [1]
+        },
+        {
+            "action": "write",
+            "target": "tip_6"
+        },
+        {
+            "action": "write",
+            "target": "form_5"
+        },
+        {
+            "action": "wait",
+            "params": [1]
+        },
+        {
+            "action": "unwrite",
+            "target": "tip_6"
+        },
+        {
+            "action": "wait",
+            "params": [1]
+        },
+        {
+            "action": "write",
+            "target": "tip_7"
+        },
+        {
+            "action": "wait",
+            "params": [1]
+        },
+        {
+            "action": "unwrite",
+            "target": "tip_7"
+        },
+        {
+            "action": "wait",
+            "params": [1]
+        },
+        {
+            "action": "write",
+            "target": "tip_8"
+        },
+        {
+            "action": "wait",
+            "params": [0.5]
+        },
+        {
+            "action": "unwrite",
+            "target": "tip_8"
+        },
+        {
+            "action": "parallel",
+            "params": [
+                {
+                    "action": "shift",
+                    "target": "shape",
+                    "params": ["LEFT * 1.5"]
+                },
+                {
+                    "action": "scale",
+                    "target": "shape",
+                    "params": [1.32]
+                }
+            ],
+            "async": true
+        },
+        {
+            "action": "parallel",
+            "params": [
+                {
+                    "action": "write",
+                    "target": "form_comb_6"
+                },
+                {
+                    "action": "create",
+                    "target": "fraction_line"
+                }
+            ]
+        },
+        {
+            "action": "lagged",
+            "params": [
+                {
+                    "action": "write",
+                    "target": "denominator"
+                },
+                {
+                    "action": "write",
+                    "target": "numerator"
+                },
+                {
+                    "action": "write",
+                    "target": "result"
+                }
+            ],
+            "properties": {
+                "ratio": 0.3
+            }
+        }
+    ]
+}
